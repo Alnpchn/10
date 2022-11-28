@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include<locale.h>
+int main()
+{
+    setlocale(LC_ALL, "RUS");
+    while (1) {
+        printf("Параллелограмм");
+        printf("\n");
+        char symb;
+        int a;
+        int h;
+        printf("введите символ: ");
+        scanf("%c", &symb);
+        printf("введите длину стороны: ");
+        scanf("%d", &a);
+        printf("введите высоту параллелограмма: ");
+        scanf("%d", &h);
+        int answ;
+        printf("Что вы хотите сделать?");
+        printf("\n");
+        printf("Нарисовать параллелограмм - 1");
+        printf("\n");
+        printf("Посчитать площадь параллелограмма - 2");
+        printf("\n");
+        printf("Получить определение - 3");
+        printf("\n");
+        printf("Введите вариант ответа: ");
+        scanf("%d", &answ);
+        if (answ == 1) {
+            int k_p = 0;
+            for (int i = 0; i < h; i++) {
+                for (int s = 0; s < k_p; s++) {
+                    printf("%s", " ");
+                }
+                for (int z = 0; z < a; z++) {
+                    printf("%c", symb);
+                }
+                k_p += 1;
+                printf("\n");
+            }
+        }
+        else if (answ == 2) {
+            int S = a * h;
+            printf("%d", S);
+            printf("\n");
+        }
+        else {
+            printf("Параллелограмм-это четырехугольник, у которого противоположные стороны попарно параллельны\n");
+
+        }
+        printf("Продолжить? (Да - y, нет - n)\n");
+        if ((a = getchar()) == 'n') break;
+    }
+    return 0;
+}
